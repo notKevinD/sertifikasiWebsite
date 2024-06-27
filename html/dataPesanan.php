@@ -39,9 +39,9 @@
             <thead>
                 <tr>
                 <th scope="col">No</th>
-                <th scope="col">Nama</th>
-                <th scope="col">Jenis Paket</th>
-                <th scope="col">Nomor Telpon</th>
+                <th scope="col">Nama</th>   
+                <th scope="col">Nomor Telepon</th>
+                <th scope="col">Kode Pos</th>
                 <th scope="col">Tanggal Pemesanan</th>
                 <th scope="col">Jumlah Pemesanan</th>
                 <th scope="col">Durasi Pemesanan</th>

@@ -76,57 +76,5 @@
 
     <!-- tabel data pesanan -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script>
-      function hitungTotalBelanja() {
-        const jumlahPesanan = document.getElementById("jumlahPesanan").value;
-        const hargaJenisPaket = document.getElementById("jenisTeh").value.split(',');
-        const hargaJenisPaket1 = parseInt(hargaJenisPaket[1]);
-
-        const totalHarga = jumlahPesanan * hargaJenisPaket1;
-        document.getElementById("total").value = totalHarga;
-      }
-
-      document.getElementById("hitung").addEventListener("click", hitungTotalBelanja);
-    </script>
   </body>
 </html>
-
-<?php
-require_once "../php/koneksiDatabase.php";
-
-// Inisialisasi nilai variabel
-$nama = "";
-$noTelp = "";
-$kodePos = "";
-$jumlahPesanan = "";
-$jenisTeh = "";
-$totalHarga = "";
-
-// Proses data yang ada di form pemesanan
-if (isset($_POST["submit"])) {
-    $nama = trim($_POST["nama"]);
-    $noTelp = trim($_POST["noHP"]);
-    $kodePos = trim($_POST["kodePos"]);
-    $jumlahPesanan = trim($_POST["jumlahPesanan"]);
-    $jenisTeh1 = trim($_POST["jenisTeh"]); // mengambil data jenis teh dan harga
-    $jenisTeh2 = explode(",", $jenisTeh1); //memecahnya menjadi 2 bagian
-    $jenisTeh = $jenisTeh2[0];
-    $totalHarga = $jenisTeh2[1]*$jumlahPesanan;
-
-    // Validasi inputan data
-        $sql = "INSERT INTO datapesanan (id, nama, noHP, kodePos, jumlahPesanan, jenisTeh, total) VALUES ('', '$nama', '$noTelp', '$kodePos', '$jumlahPesanan', '$jenisTeh', '$totalHarga')";
-    
-    if (mysqli_query($koneksi, $sql)) {
-        //berpindah ke halaman data pesanan
-        echo "<script>alert('pemesananBerhasil');window.location.href = 'dataPesanan.php';</script>";
-        // Reset form fields
-        $nama = "";
-        $noTelp = "";
-        $kodePos = "";
-        $jumlahPesanan = "";
-        $jenisTeh = "";
-        $totalHarga = "";
-
-    }
-}
-?>

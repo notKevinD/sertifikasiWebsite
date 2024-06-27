@@ -1,0 +1,5 @@
+.formPemesanan{
+    display: block;
+    max-width: 70%;
+    margin: 0 auto; /* Margin otomatis untuk memusatkan elemen */
+}

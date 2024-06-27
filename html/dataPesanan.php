@@ -24,10 +24,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="pemesanan.php">Pemesanan</a>
+              <a class="nav-link " aria-current="page" href="pemesanan.php">Pemesanan</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="dataPesanan.php">Daftar Pesanan</a>
+              <a class="nav-link active" href="dataPesanan.php">Daftar Pesanan</a>
             </li>
           </ul>
         </div>
